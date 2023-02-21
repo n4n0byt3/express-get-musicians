@@ -7,10 +7,10 @@ const port = 3000;
 
 //TODO
 
-app.get('/musicians' , async (req, res) => {
-    let fetchedMusicians = await Musician.findAll();
-    res.json(fetchedMusicians)
-})
+app.get('/musicians/:id', async (req, res) => {
+    const fetchedMusician = await Musician.findByPk(req.params.id);
+    res.json(fetchedMusician)
+ })
 
 app.listen(port, () => {
     sequelize.sync();
