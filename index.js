@@ -1,5 +1,5 @@
-const {Band} = require('./Band')
-const {Musician} = require('./Musician')
+const {Band} = require('./models/Band')
+const {Musician} = require('./models/Musician')
 
 Musician.belongsTo(Band)
 Band.hasMany(Musician)
